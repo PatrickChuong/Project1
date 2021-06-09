@@ -5,8 +5,9 @@
     "\\resources\\css",
     "\\resources\\views",
     "\\resources\\views\\layouts",
+    "\\resources\\views\\post",
     "\\routes"
   ],
-  "SelectedNode": "\\.env.example",
+  "SelectedNode": "\\resources\\views\\layouts\\app.blade.php",
   "PreviewInSolutionExplorer": false
 }
