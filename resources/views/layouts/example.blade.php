@@ -1,22 +1,16 @@
 <!DOCTYPE html>
-<hmtl lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Chung King Palace Website</title>
-
-
-  <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-</head>
-@include ('layouts.header')
-
-<style>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <style>
 .inv {
     display: none;
 }
 
 table, th, td {
-    padding:5px;
   border: 1px solid black;
+  border-collapse: collapse;
 }
 th, td {
   padding: 5px; 
@@ -202,3 +196,4 @@ th, td {
             });
         </script>
     </body>
+</html>
