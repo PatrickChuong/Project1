@@ -46,10 +46,25 @@ header{
     <header>
 		<div class = "box">
 			<ul type = "none">
+
+                @auth
+                <li><a href="/home">Place Order </a></li>
+                <li><a href="/home">Show Orders </a></li>
+                <li>
+                    <form action="{{route('logout') }}" method="post" class="p-3 inline">
+                        @csrf
+                        <button type="submit">Logout</button>
+                    </form>
+                </li>
+                @endauth
+
+                @guest
 				<li><a href="/home">Home </a></li>
 				<li><a href="/menu">Menu </a></li>
 				<li><a href="/contact">Contact </a></li>
 				<li><a href="/photo">Photo Gallery </a></li>
+                <li><a href="/login">Login </a></li>
+                @endguest
 			</ul>
 		</div>
     </header>

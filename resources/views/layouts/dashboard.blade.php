@@ -20,7 +20,7 @@ div.intro{
 </style>
 <body>
     <div class="intro">
-    Welcome to Chung King Palace
+    You are Logged in
     </div>
 </body>
 </html>
