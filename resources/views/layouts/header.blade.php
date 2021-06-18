@@ -50,7 +50,7 @@ header{
                 @auth
                 <li><a href="/home">Place Order </a></li>
                 <li><a href="/home">Show Orders </a></li>
-                <li>
+                <li></li>
                     <form action="{{route('logout') }}" method="post" class="p-3 inline">
                         @csrf
                         <button type="submit">Logout</button>

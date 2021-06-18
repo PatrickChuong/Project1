@@ -2,15 +2,17 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\Models",
+    "\\app\\Http",
+    "\\app\\Http\\Controllers",
     "\\database",
     "\\database\\migrations",
+    "\\database\\seeders",
     "\\resources",
     "\\resources\\views",
     "\\resources\\views\\layouts",
     "\\resources\\views\\post",
     "\\routes"
   ],
-  "SelectedNode": "\\resources\\views\\layouts\\dashboard.blade.php",
+  "SelectedNode": "\\database\\migrations\\2021_06_18_172503_create_menu_items_table.php",
   "PreviewInSolutionExplorer": false
 }
