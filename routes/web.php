@@ -39,3 +39,8 @@ Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
 Route::get('/order', [OrderController::class, 'index'])->name('order');
 Route::post('/order', [OrderController::class, 'store']);
+
+Route::get('/placeOrder', function () {
+    $select = DB::table('menu_items')->orderBy('id','ASC')->get();
+    return view('layouts.placeOrder ', ['select' => $select]);
+});
