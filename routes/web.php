@@ -44,3 +44,5 @@ Route::get('/placeOrder', function () {
     $select = DB::table('menu_items')->orderBy('id','ASC')->get();
     return view('layouts.placeOrder ', ['select' => $select]);
 });
+
+Route::post('/placeOrder', [OrderController::class, 'store']);

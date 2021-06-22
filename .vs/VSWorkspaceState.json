@@ -2,10 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\Http",
-    "\\app\\Http\\Controllers",
+    "\\app\\Models",
     "\\database",
-    "\\database\\migrations",
     "\\database\\seeders",
     "\\resources",
     "\\resources\\views",
@@ -13,6 +11,6 @@
     "\\resources\\views\\post",
     "\\routes"
   ],
-  "SelectedNode": "\\database\\migrations\\2021_06_18_172503_create_menu_items_table.php",
+  "SelectedNode": "\\app\\Models\\orderDetail.php",
   "PreviewInSolutionExplorer": false
 }
