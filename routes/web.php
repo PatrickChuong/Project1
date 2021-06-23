@@ -41,8 +41,8 @@ Route::get('/order', [OrderController::class, 'index'])->name('order');
 Route::post('/order', [OrderController::class, 'store']);
 
 Route::get('/placeOrder', function () {
-    $select = DB::table('menu_items')->orderBy('id','ASC')->get();
-    return view('layouts.placeOrder ', ['select' => $select]);
+    $menu = DB::table('menu_items')->orderBy('id','ASC')->get();
+    return view('layouts.placeOrder ', ['menu' => $menu]);
 });
 
-Route::post('/placeOrder', [OrderController::class, 'store']);
+Route::post('/placeOrder', [OrderController::class, 'store'])->name('placeOrder');
