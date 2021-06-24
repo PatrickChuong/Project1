@@ -21,10 +21,22 @@ class OrderController extends Controller
 
     public function store(Request $request)
     {
-        //$order = Auth::orderDetail()->;
+        $var=count($request->all());
+
+        dd($);
         $this->validate($request, [
             'quantity' => 'required',
         ]);
+
+        
+        //for ()
+        //{
+        //    orderDetails::create([
+        //        'id' => ,
+        //        'item_id'=> $data->id,
+        //        'quantity'=> $request->quantity,
+        //    ]);
+        //}
 
         if(!auth()->attempt($request->only('quantity')))
         {

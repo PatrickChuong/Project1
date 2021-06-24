@@ -11,6 +11,6 @@
     "\\resources\\views\\post",
     "\\routes"
   ],
-  "SelectedNode": "\\app\\Models\\User.php",
+  "SelectedNode": "\\resources\\views\\layouts\\register.blade.php",
   "PreviewInSolutionExplorer": false
 }

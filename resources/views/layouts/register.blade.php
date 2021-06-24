@@ -88,5 +88,17 @@
     </div>
 </div>
 </div>
+
+
+
+<input type = "hidden" name = "sequence" value = x>
+
+<p>
+var rand=$_POST["sequence"];
+document.write(rand)
+</p>
+
+
+
 </body>
 </html>
