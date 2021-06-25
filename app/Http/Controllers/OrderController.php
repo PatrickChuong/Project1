@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\orderDetails;
+use App\Models\orderDetail;
 use App\Http\Controllers;
 
 class OrderController extends Controller
@@ -21,22 +21,15 @@ class OrderController extends Controller
 
     public function store(Request $request)
     {
-        $var=count($request->all());
-
-        dd($);
         $this->validate($request, [
             'quantity' => 'required',
         ]);
 
-        
-        //for ()
-        //{
-        //    orderDetails::create([
-        //        'id' => ,
-        //        'item_id'=> $data->id,
-        //        'quantity'=> $request->quantity,
-        //    ]);
-        //}
+            orderDetail::create([
+                'id' => new,
+                'item_id'=> $request->item_id,
+                'quantity'=> $request->quantity,
+            ]);
 
         if(!auth()->attempt($request->only('quantity')))
         {

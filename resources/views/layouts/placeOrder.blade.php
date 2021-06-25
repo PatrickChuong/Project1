@@ -23,32 +23,21 @@ th, td{
 
 @include ('layouts.header')
 <div class="div1">
-    <table>
-        @foreach($menu as $key => $data)
-        <tr>    
-            <th>{{$data->id}}</th>
-            <th>{{$data->item_Name}}</th>
-            <th>{{$data->Price}}</th>
-            <th >
-                <form action"{{ route('placeOrder')}}" method="post">
-                @csrf
-                    <div class="">
-                        <label for="quantity" class="sr-only">Quantity</label>
-                        <input type="number" name="quantity" id="quantity" placeholder="How many do you want (Numeric Value)?"
-                        class="@error('quantity') border-red-500 @enderror" value="">
+    <form action"{{ route('placeOrder')}}" method="post">
+        @csrf
+        <div class="form-group">
+            <select class="form-control" name="item_id">
+                @foreach($menu as $menu)
+                <option value="{{$menu->id}}">{{$menu->item_Name}} {{$menu->Price}}</option>
+                @endforeach
+                <select name="quantity">
+                    <input type="number" name="quantity" id="quantity" placeholder="How many do you want (Numeric Value)?"</input>
+                </select>
 
-                        @error('quantity')
-                        <div class="text-red-500 mt-2 text-sm">
-                            {{ $message }}
-                        </div>
-                        @enderror
-                    </div>
-            </th>
-        </tr>
-        @endforeach
-    </table>
-    <button type="submit" class="bg-blue-500 text-white px-4 py-3 rounded font-medium w-full">Place Order</button>
-                </form>
+            </select>
+
+            <button type="submit" class="bg-blue-500 text-white px-4 py-3 rounded font-medium w-full">Place Order</button>
+    </form>
 </div>
 
 </html>

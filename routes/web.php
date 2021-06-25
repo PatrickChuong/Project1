@@ -42,7 +42,7 @@ Route::post('/order', [OrderController::class, 'store']);
 
 Route::get('/placeOrder', function () {
     $menu = DB::table('menu_items')->orderBy('id','ASC')->get();
-    return view('layouts.placeOrder ', ['menu' => $menu]);
+    return View::make('layouts.placeOrder ', compact('menu'));
 });
 
 Route::post('/placeOrder', [OrderController::class, 'store'])->name('placeOrder');
