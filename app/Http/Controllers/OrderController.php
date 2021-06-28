@@ -21,20 +21,14 @@ class OrderController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'quantity' => 'required',
-        ]);
+
+        //dd($request->item_id);
 
             orderDetail::create([
-                'id' => new,
+                'order_id'=> '1',
                 'item_id'=> $request->item_id,
                 'quantity'=> $request->quantity,
             ]);
-
-        if(!auth()->attempt($request->only('quantity')))
-        {
-            return back()->with('status','Invalid details');
-        }
 
         return redirect()->route('placeOrder');
     }

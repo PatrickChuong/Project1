@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ShowController;
 
 
 Route::get('/menu', function () {
@@ -37,8 +38,8 @@ Route::post('/login', [LoginController::class, 'store']);
 
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
-Route::get('/order', [OrderController::class, 'index'])->name('order');
-Route::post('/order', [OrderController::class, 'store']);
+//Route::get('/order', [OrderController::class, 'index'])->name('order');
+//Route::post('/order', [OrderController::class, 'store']);
 
 Route::get('/placeOrder', function () {
     $menu = DB::table('menu_items')->orderBy('id','ASC')->get();
@@ -46,3 +47,8 @@ Route::get('/placeOrder', function () {
 });
 
 Route::post('/placeOrder', [OrderController::class, 'store'])->name('placeOrder');
+
+Route::get('/showOrder', [ShowController::class, 'index'])->name('showOrder');
+
+
+
