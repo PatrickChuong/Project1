@@ -25,11 +25,11 @@ class OrderController extends Controller
         //dd($request->item_id);
 
             orderDetail::create([
-                'order_id'=> '1',
+                'order_id'=> $request->count,
                 'item_id'=> $request->item_id,
                 'quantity'=> $request->quantity,
-            ]);
+            ]); 
 
-        return redirect()->route('placeOrder');
+        return redirect()->route('placeOrder')->with('success',true)->with('message','');
     }
 }

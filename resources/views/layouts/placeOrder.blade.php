@@ -20,7 +20,6 @@ th, td{
 </style>
 
 
-
 @include ('layouts.header')
 <div class="div1">
     <form action"{{ route('placeOrder')}}" method="post">
@@ -35,9 +34,24 @@ th, td{
                 </select>
 
             </select>
-
-            <button type="submit" class="bg-blue-500 text-white px-4 py-3 rounded font-medium w-full">Place Order</button>
+                <button type="submit" class="bg-blue-500 text-white px-4 py-3 rounded font-medium w-full" onclick="add()" name="count">Place Order</button>
+                <input type="hidden" name="count" id="count" value="0"></input>
     </form>
 </div>
+
+<script>
+var capnum = 1;
+function add(){
+     capnum++;
+     document.getElementById('count').value = capnum;
+}
+</script>
+
+@if(Session::has('success'))
+    <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <strong>You have placed an order!</strong> {{ Session::get('message', '') }}
+    </div>
+@endif
 
 </html>

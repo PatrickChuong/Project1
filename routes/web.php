@@ -50,5 +50,10 @@ Route::post('/placeOrder', [OrderController::class, 'store'])->name('placeOrder'
 
 Route::get('/showOrder', [ShowController::class, 'index'])->name('showOrder');
 
+Route::get('/showOrder', function () {
+    $menu = App\Models\orderDetail::orderBy('order_id','ASC')->get();
+    return View::make('layouts.showOrder ', compact('menu'));
+});
+
 
 
