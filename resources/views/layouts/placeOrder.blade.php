@@ -40,10 +40,10 @@ th, td{
 </div>
 
 <script>
-var capnum = 1;
+var num = 1;
 function add(){
-     capnum++;
-     document.getElementById('count').value = capnum;
+     num++;
+     document.getElementById('count').value = num;
 }
 </script>
 

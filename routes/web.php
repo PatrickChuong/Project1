@@ -55,5 +55,7 @@ Route::get('/showOrder', function () {
     return View::make('layouts.showOrder ', compact('menu'));
 });
 
+Route::post('/showOrder', [ShowController::class, 'delete'])->name('deleteOrder');
+
 
 

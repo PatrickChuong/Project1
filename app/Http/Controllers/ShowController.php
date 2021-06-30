@@ -15,4 +15,10 @@ class ShowController extends Controller
         return view('layouts.showOrder');
 
     }
+
+    public function delete(Request $request)
+    {
+        $order_id=orderDetail::find($request->delete)
+        $order_id->delete();
+    }
 }
