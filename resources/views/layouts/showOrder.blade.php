@@ -14,6 +14,12 @@ div.div1{
     top:50px;
 }
 
+<style>
+div.div1{
+    position:relative;
+    top:50px;
+}
+
 th, td{
     padding:10px;
 }
@@ -49,5 +55,14 @@ th, td{
         <button type="submit" class="bg-blue-500 text-white px-4 py-3 rounded font-medium">Delete Order</button>
     </form>
 </div>
+
+@if(Session::has('success'))
+<div class="div1">
+    <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <strong></strong> {{ Session::get('message', '') }}
+    </div>
+    </div>
+@endif
 
 </html>
