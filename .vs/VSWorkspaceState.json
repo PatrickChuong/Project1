@@ -4,6 +4,7 @@
     "\\app",
     "\\app\\Models",
     "\\database",
+    "\\database\\migrations",
     "\\database\\seeders",
     "\\resources",
     "\\resources\\views",
@@ -11,5 +12,6 @@
     "\\resources\\views\\post",
     "\\routes"
   ],
+  "SelectedNode": "\\database\\migrations\\2021_07_02_165152_create_orders_table.php",
   "PreviewInSolutionExplorer": false
 }

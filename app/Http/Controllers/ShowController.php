@@ -42,4 +42,13 @@ class ShowController extends Controller
 
 
     }
+
+    public function total(Request $request)
+    {
+        $total_id = $request -> total;
+        $query = DB::table('order_details')
+                    ->join('menu_items', 'order_details.item_id','=','menu_items.id')
+                    ->select('order_details.id','total as (menu_items.price*order_details.quantity)')
+                    ->where('order_id','=','$total_id')
+    }
 }

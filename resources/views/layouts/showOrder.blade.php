@@ -15,9 +15,10 @@ div.div1{
 }
 
 <style>
-div.div1{
+div.div2{
     position:relative;
     top:50px;
+    right:50px;
 }
 
 th, td{
@@ -47,7 +48,7 @@ th, td{
                 @endforeach
         </tbody>
     </table>
-    <form action"{{ route('deleteOrder')}}" method="post">
+    <form action="{{ action('ShowController@delete')}}" method="post">
         @csrf
         <select name="delete">
             <input type="number" name="delete" id="delete" placeholder="Which order ID do you want to delete?"</input>
@@ -55,6 +56,17 @@ th, td{
         <button type="submit" class="bg-blue-500 text-white px-4 py-3 rounded font-medium">Delete Order</button>
     </form>
 </div>
+
+<div class="div2">
+<form action="{{ action('ShowController@total')}}" method="post">
+        @csrf
+        <select name="total">
+            <input type="number" name="total" id="total" placeholder="Which order ID do you want to total of?"</input>
+        </select>
+        <button type="submit" class="bg-blue-500 text-white px-4 py-3 rounded font-medium">Find Total of Order ID</button>
+    </form>
+</div>
+
 
 @if(Session::has('success'))
 <div class="div1">
