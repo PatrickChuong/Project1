@@ -56,6 +56,6 @@ Route::get('/showOrder', function () {
 });
 
 Route::post('/showOrder', [ShowController::class, 'delete'])->name('deleteOrder');
-Route::post('/showOrder', [ShowController::class, 'total'])->name('totalOrder');
+//Route::post('/showOrder', [ShowController::class, 'total'])->name('totalOrder');
 
 
