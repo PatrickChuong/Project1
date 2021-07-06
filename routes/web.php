@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ShowController;
+use App\Http\Controllers\TotalController;
 
 
 Route::get('/menu', function () {
@@ -55,7 +56,9 @@ Route::get('/showOrder', function () {
     return View::make('layouts.showOrder ', compact('menu'));
 });
 
-Route::post('/showOrder', [ShowController::class, 'delete'])->name('deleteOrder');
-//Route::post('/showOrder', [ShowController::class, 'total'])->name('totalOrder');
+Route::post('/showOrder', 'App\Http\Controllers\ShowController@delete')->name('deleteOrder');
+
+Route::get('/totalOrder', [TotalController::class, 'index'])->name('totalOrder');
+Route::post('/totalOrder', [TotalController::class, 'total']);
 
 

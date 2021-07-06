@@ -48,7 +48,6 @@ th, td{
                 @endforeach
         </tbody>
     </table>
-<!--    <form action="{{ action('ShowController@delete') }}" method="post">-->
     <form action"{{ route('deleteOrder')}}" method="post">
         @csrf
         <select name="delete">
@@ -58,17 +57,6 @@ th, td{
     </form>
 </div>
 
-<!--
-<div class="div2">
-<form action="{{ action('ShowController@total') }}" method="post">
-        @csrf
-        <select name="total">
-            <input type="number" name="total" id="total" placeholder="Which order ID do you want to total of?"</input>
-        </select>
-        <button type="submit" class="bg-blue-500 text-white px-4 py-3 rounded font-medium">Find Total of Order ID</button>
-    </form>
-</div>
--->
 
 
 @if(Session::has('success'))
