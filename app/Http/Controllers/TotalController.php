@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\orderDetail;
-use App\Models\MenuItems;
-Use DB;
+use Illuminate\Support\Facades\DB;
 
 class TotalController extends Controller
 {
@@ -19,16 +17,18 @@ class TotalController extends Controller
     public function total(Request $request)
     {
         $total_id = $request -> total;
-        $query = orderDetail::join('menu_items','order_details.item_id','=','menu_items.id')
-        ->select(DB::raw('sum(menu_items.Price * order_details.quantity) as total'))->groupBy('order_details.order_id')
-        //->select('order_details.order_id','menu_items.Price', 'order_details.quantity')
-        //'sum(menu_items.Price * order_details.quantity) as total'
-        //->where($total_id,'=','order_details.order_id')
-        ->get();
-        //$query = DB::table('order_details')
-        //            ->join('menu_items', 'order_details.item_id','=','menu_items.id')
-        //            ->select('order_details.id','total as (menu_items.Price*order_details.quantity)')
-        //            ->where('order_id','=','$total_id');
+        $query = DB::table('order_details')
+                //->join('menu_items', 'order_details.item_id', '=','menu_items.id')
+                //->select('order_details.id','order_details.order_id','menu_items.price * order_details.quantity as total')
+                //->from('order_details')
+                //->groupBy('order_details.order_id')
+
+                ->join('menu_items','order_details.item_id','=','menu_items.id')
+                ->select('order_details.order_id','menu_items.price' , 'order_details.quantity')
+                
+                ->groupBy('order_details.order_id','menu_items.price','order_details.quantity')
+                
+                ->get();
 
         echo $query;
     }

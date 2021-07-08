@@ -11,7 +11,7 @@
 <style>
 div.div1{
     position:relative;
-    top:50px;
+    top:100px;
 }
 
 th, td{
@@ -27,7 +27,7 @@ th, td{
         <div class="form-group">
             <select class="form-control" name="item_id">
                 @foreach($menu as $menu)
-                <option value="{{$menu->id}}">{{$menu->item_Name}} {{$menu->Price}}</option>
+                <option value="{{$menu->id}}">{{$menu->item_Name}} {{$menu->price}}</option>
                 @endforeach
                 <select name="quantity">
                     <input type="number" name="quantity" id="quantity" placeholder="How many do you want (Numeric Value)?"</input>
@@ -42,7 +42,7 @@ th, td{
 <script>
 var num = 1;
 function add(){
-     num++;
+     num=num+1;
      document.getElementById('count').value = num;
 }
 </script>
@@ -50,7 +50,7 @@ function add(){
 @if(Session::has('success'))
     <div class="alert alert-success">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-    <strong>You have placed an order!</strong> {{ Session::get('message', '') }}
+    <strong></strong> {{ Session::get('message', '') }}
     </div>
 @endif
 

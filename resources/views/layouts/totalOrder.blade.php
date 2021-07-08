@@ -9,16 +9,10 @@
 </head>
 
 <style>
-div.div1{
-    position:relative;
-    top:50px;
-}
 
-<style>
 div.div2{
     position:relative;
-    top:50px;
-    right:50px;
+    top:100px;
 }
 
 th, td{

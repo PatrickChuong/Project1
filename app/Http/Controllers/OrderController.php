@@ -23,13 +23,19 @@ class OrderController extends Controller
     {
 
         //dd($request->item_id);
-
+        if ($request->quantity <1)
+        {
+            return redirect()->route('placeOrder')->with('success',true)->with('message','Quantity must be a positive number');
+        }
+        else
+        {
             orderDetail::create([
                 'order_id'=> $request->count,
                 'item_id'=> $request->item_id,
                 'quantity'=> $request->quantity,
-            ]); 
+            ]);
 
-        return redirect()->route('placeOrder')->with('success',true)->with('message','');
+            return redirect()->route('placeOrder')->with('success',true)->with('message','You have placed an order!');
+        }
     }
 }
