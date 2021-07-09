@@ -22,10 +22,10 @@ th, td{
 
 @include ('layouts.header')
 <div class="div1">
-    <form action"{{ route('placeOrder')}}" method="post">
+    <form action"{{ route('placeOrder')}}" method="post" id="placeOrder">
         @csrf
         <div class="form-group">
-            <select class="form-control" name="item_id">
+            <select class="form-control" name="menu_item">
                 @foreach($menu as $menu)
                 <option value="{{$menu->id}}">{{$menu->item_Name}} {{$menu->price}}</option>
                 @endforeach
@@ -41,9 +41,12 @@ th, td{
 
 <script>
 var num = 1;
-function add(){
-     num=num+1;
-     document.getElementById('count').value = num;
+function add()
+{
+      //e.preventDefault();
+      num=num+1;
+      document.getElementById('count').value = num;
+      //document.getElementById('placeOrder').submit();
 }
 </script>
 

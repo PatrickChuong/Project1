@@ -42,7 +42,7 @@ th, td{
             @foreach($menu as $menu)
                 <tr>
                     <td>{{$menu->order_id}}</td>
-                    <td>{{$menu->item_id}}</td>
+                    <td>{{$menu->menu_item}}</td>
                     <td>{{$menu->quantity}}</td>
                 </tr>
                 @endforeach

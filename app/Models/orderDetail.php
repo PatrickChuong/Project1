@@ -12,7 +12,7 @@ class orderDetail extends Model
     protected $fillable =
     [
         'order_id',
-        'item_id',
+        'menu_item',
         'quantity',
     ];
 

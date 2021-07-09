@@ -31,7 +31,7 @@ class OrderController extends Controller
         {
             orderDetail::create([
                 'order_id'=> $request->count,
-                'item_id'=> $request->item_id,
+                'menu_item'=> $request->menu_item,
                 'quantity'=> $request->quantity,
             ]);
 

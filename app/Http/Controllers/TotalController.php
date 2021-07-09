@@ -18,17 +18,18 @@ class TotalController extends Controller
     {
         $total_id = $request -> total;
         $query = DB::table('order_details')
-                //->join('menu_items', 'order_details.item_id', '=','menu_items.id')
+                //->join('menu_items', 'order_details.menu_item', '=','menu_items.id')
                 //->select('order_details.id','order_details.order_id','menu_items.price * order_details.quantity as total')
                 //->from('order_details')
                 //->groupBy('order_details.order_id')
 
-                ->join('menu_items','order_details.item_id','=','menu_items.id')
-                ->select('order_details.order_id','menu_items.price' , 'order_details.quantity')
-                
-                ->groupBy('order_details.order_id','menu_items.price','order_details.quantity')
-                
+                ->join('menu_items','order_details.menu_item','=','menu_items.id')
+                ->select('order_details.order_id','menu_items.price * order_details.quantity as total')                
+                ->groupBy('order_details.order_id')             
                 ->get();
+
+
+
 
         echo $query;
     }
