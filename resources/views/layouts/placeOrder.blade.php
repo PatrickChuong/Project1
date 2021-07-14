@@ -13,25 +13,21 @@ div.div1{
     position:relative;
     top:100px;
 }
-
-th, td{
-    padding:10px;
-}
 </style>
 
 
 @include ('layouts.header')
-
+<div class="div1"> 
 <div class="container">
-    <button class="btn btn-success mt-5 mb-5"
+    <button class="bg-blue-500 text-white px-4 py-3 rounded font-medium"
         @click="addNewForm">
         New order
     </button>
-    <div class="div1" v-for="(order, index) in orders">
+    <div v-for="(order, index) in orders">
         <form action="{{ route('placeOrder')}}" method="post" id="placeOrder">
             @csrf
             <div class="form-group">
-                <select class="form-control" name="menu_item" v-model="order.menu_item">
+                <select class="form-control mt-5 mb-5" name="menu_item" v-model="order.menu_item">
                     @foreach($menu as $menu)
                     <option value="{{$menu->id}}">{{$menu->item_Name}} {{$menu->price}}</option>
                     @endforeach
@@ -40,22 +36,13 @@ th, td{
                     </select>
 
                 </select>
-                    <button type="submit" class="bg-blue-500 text-white px-4 py-3 rounded font-medium w-full" onclick="add()" name="count">Place Order</button>
+                    <!-- <button type="submit" class="bg-blue-500 text-white px-4 py-3 rounded font-medium w-full" onclick="add()" name="count">Place Order</button> -->
                     <input type="hidden" name="count" id="count" value="0"></input>
         </form>
     </div>
 </div>
-
-<script>
-//var num = 1;
-//function add()
-//{
-      //e.preventDefault();
-//      num=num+1;
-//      document.getElementById('count').value = num;
-      //document.getElementById('placeOrder').submit();
-//}
-</script>
+<button class="bg-blue-500 text-white px-4 py-3 rounded font-medium" type="submit" form="placeOrder">Place Order</button>
+</div>
 
 <script>
     var app = new Vue({

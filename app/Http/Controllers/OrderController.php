@@ -31,8 +31,8 @@ class OrderController extends Controller
         {
             orderDetail::create([
                 'order_id'=> $request->count,
-                'menu_item'=> $request->menu_item,
-                'quantity'=> $request->quantity,
+                'menu_item'=> $request[$index]['menu_item'],
+                'quantity'=> $request[$index]['quantity'],
             ]);
 
             return redirect()->route('placeOrder')->with('success',true)->with('message','You have placed an order!');
