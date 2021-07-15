@@ -24,7 +24,7 @@ div.div1{
         New order
     </button>
     <div v-for="(order, index) in orders">
-        <form action="{{ route('placeOrder')}}" method="post" id="placeOrder">
+        <form action="{{ route('placeOrder')}}" method="post" id="placeOrder">Order @{{index}}
             @csrf
             <div class="form-group">
                 <select class="form-control mt-5 mb-5" name="menu_item" v-model="order.menu_item">
@@ -68,6 +68,7 @@ div.div1{
             }
         }
     })
+    document.getElementById('count').value = index;
 </script>
 
 

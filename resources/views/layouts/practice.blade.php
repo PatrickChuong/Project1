@@ -20,7 +20,7 @@
                 X
             </span>
 
-            <h4 class="card-title">Add Order (index:{{index}})</h4>
+            <h4 class="card-title">Add Order (index:@{{index}})</h4>
 
             <div class="order-form">
                 <input type="text" class="form-control mb-2" placeholder="Menu Item"
@@ -52,7 +52,7 @@
                     quantity:''
                 })
             },
-            deleteForm(abc){
+            deleteForm(index){
                 this.orders.splice(index,1)
 
             }
