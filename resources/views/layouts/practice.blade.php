@@ -20,7 +20,7 @@
                 X
             </span>
 
-            <h4 class="card-title">Add Order (index:@{{index}})</h4>
+            <h4 class="card-title">Add Order (index: @{{index}} )</h4>
 
             <div class="order-form">
                 <input type="text" class="form-control mb-2" placeholder="Menu Item"
@@ -30,6 +30,7 @@
             </div>
         </div>
     </div>
+    <!-- <input type="submit" value="Add" class="btn btn-info" @sumbit="AddOrder(index)"> -->
 </div>
 
 
@@ -55,7 +56,14 @@
             deleteForm(index){
                 this.orders.splice(index,1)
 
-            }
+            },
+            // addOrder(index){
+            //     axios.post('/orderDetail',{
+            //         menu_item[index]:this.menu_item,
+            //         quantity[index]:this.quantity
+            //     })
+            //     alert("Adding Order");
+            // }
         }
     })
 </script>
