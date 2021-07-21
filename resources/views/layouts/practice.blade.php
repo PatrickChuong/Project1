@@ -30,12 +30,43 @@
             </div>
         </div>
     </div>
-    <!-- <input type="submit" value="Add" class="btn btn-info" @sumbit="AddOrder(index)"> -->
+    <input type="submit" value="Add" class="btn btn-info" @sumbit="AddOrder(index)">
 </div>
 
 
 
 <script>
+    export default{
+
+        data(){
+            return{
+                menu_item:'',
+                quantity:''
+            }
+        },
+        mounted(){
+            console.log('Component mounted.')
+        },
+
+        methods:{
+            addOrder(index){
+                axios.post('/placeorder',{
+                    menu_item:this.menu_item,
+                    quantity:this.quantity
+                })
+                .then(function (response){
+                    currentObj.output = response.data;
+                })
+                alert("Adding Order");
+            }
+        }
+    }
+</script>
+
+
+
+
+<!-- <script>
     var app = new Vue({
         el:'.container',
         data:{
@@ -57,13 +88,13 @@
                 this.orders.splice(index,1)
 
             },
-            // addOrder(index){
-            //     axios.post('/orderDetail',{
-            //         menu_item[index]:this.menu_item,
-            //         quantity[index]:this.quantity
-            //     })
-            //     alert("Adding Order");
-            // }
+            addOrder(index){
+                axios.post('/practice',{
+                    menu_item:this.menu_item,
+                    quantity:this.quantity
+                })
+                alert("Adding Order");
+            }
         }
     })
-</script>
+</script> -->
