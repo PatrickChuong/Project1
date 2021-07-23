@@ -65,6 +65,6 @@ Route::post('/showOrder', 'App\Http\Controllers\ShowController@delete')->name('d
 Route::get('/totalOrder', [TotalController::class, 'index'])->name('totalOrder');
 Route::post('/totalOrder', [TotalController::class, 'total']);
 
-Route::post('practice','PracticeController@addOrder');
+Route::post('addOrder','PracticeController@addOrder');
 
 

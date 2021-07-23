@@ -1,8 +1,6 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-
-
+<!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
 
 
 
@@ -30,12 +28,13 @@
             </div>
         </div>
     </div>
-    <input type="submit" value="Add" class="btn btn-info" @sumbit="AddOrder(index)">
+    <button class="btn btn-success mt-5 mb-5"
+    @click="addOrder">Add Order
 </div>
 
 
 
-<script>
+<!-- <script>
     export default{
 
         data(){
@@ -61,12 +60,12 @@
             }
         }
     }
-</script>
+</script> -->
 
 
 
 
-<!-- <script>
+<script>
     var app = new Vue({
         el:'.container',
         data:{
@@ -88,8 +87,9 @@
                 this.orders.splice(index,1)
 
             },
-            addOrder(index){
-                axios.post('/practice',{
+            addOrder(){
+                //const axios = require('axios');
+                axios.post('addOrder',{
                     menu_item:this.menu_item,
                     quantity:this.quantity
                 })
@@ -97,4 +97,4 @@
             }
         }
     })
-</script> -->
+</script>
