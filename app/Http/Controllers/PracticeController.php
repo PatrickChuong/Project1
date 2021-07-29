@@ -8,12 +8,13 @@ class PracticeController extends Controller
 {
     public function addOrder(Request $request)
     {
-        //$add = orderDetail::create($request->all());
+
+        //add = orderDetail::create($request->all());
     
-        //return response()->json($add);
+        // return response()->json($add);
 
 
 
-        dd("123");
+        dd($request->item);
     }
 }

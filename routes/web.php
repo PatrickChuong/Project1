@@ -8,6 +8,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ShowController;
 use App\Http\Controllers\TotalController;
+use App\Http\Controllers\PracticeController;
 
 
 Route::get('/menu', function () {
@@ -65,6 +66,7 @@ Route::post('/showOrder', 'App\Http\Controllers\ShowController@delete')->name('d
 Route::get('/totalOrder', [TotalController::class, 'index'])->name('totalOrder');
 Route::post('/totalOrder', [TotalController::class, 'total']);
 
-Route::post('addOrder','PracticeController@addOrder');
+// Route::post('addOrder','PracticeController@addOrder'):
+Route::post('/practice', [PracticeController::class, 'addOrder'])->name('addOrder');
 
 

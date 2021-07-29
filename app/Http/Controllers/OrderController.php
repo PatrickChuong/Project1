@@ -30,31 +30,31 @@ class OrderController extends Controller
         }
         else
         {
-            $order_id = $request->input('order_id');
-            $menu_item = $request->input('menu_item',[]);
-            $quantity = $request->input('quantity',[]);
+            // $order_id = $request->input('order_id');
+            // $menu_item = $request->input('menu_item',[]);
+            // $quantity = $request->input('quantity',[]);
 
-            $orders = [];
-
-
-            foreach($order_id as $index => $order)
-            {
-                $orders[]=
-                [
-                    "order_id" => $order_id[$index],
-                    "menu_item" => $menu_item[$index],
-                    "quantity" => $quantity[$index],
-                ];
-            }
-            $created = orderDetail::insert($orders);
+            // $orders = [];
 
 
+            // foreach($order_id as $index => $order)
+            // {
+            //     $orders[]=
+            //     [
+            //         "order_id" => $order_id[$index],
+            //         "menu_item" => $menu_item[$index],
+            //         "quantity" => $quantity[$index],
+            //     ];
+            // }
+            // $created = orderDetail::insert($orders);
 
-            // orderDetail::create([
-            //     'order_id'=> $request->count,
-            //     'menu_item'=> $request['menu_item'],
-            //     'quantity'=> $request['quantity'],
-            // ]);
+
+
+            orderDetail::create([
+                'order_id'=> $request->count,
+                'menu_item'=> $request['menu_item'],
+                'quantity'=> $request['quantity'],
+            ]);
 
             return redirect()->route('placeOrder')->with('success',true)->with('message','You have placed an order!');
         }

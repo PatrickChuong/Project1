@@ -16,19 +16,21 @@
                 @click="deleteForm(index)">
                 X
             </span>
-
+            <form action="{{ route('addOrder')}}" method="post" id="addOrder">
+            @csrf
             <h4 class="card-title">Add Order (index: @{{index}} )</h4>
 
             <div class="order-form">
                 <input type="text" class="form-control mb-2" placeholder="Menu Item"
-                v-model="order.menu_item"></input>
+                v-model="order.menu_item" name="item[]"></input>
                 <input type="text" class="form-control mb-2" placeholder="Quantity"
-                v-model="order.quantity"></input>
+                v-model="order.quantity" name="quantity[]"></input>
             </div>
         </div>
     </div>
-    <button class="btn btn-success mt-5 mb-5"
-    @click="addOrder">Add Order
+    <button class="btn btn-success mt-5 mb-5" type="submit" form="addOrder">Add Order
+    <!-- <button class="btn btn-success mt-5 mb-5" type="submit" @click="addOrder">Add Order -->
+</form>
 </div>
 
 
@@ -86,14 +88,18 @@
                 this.orders.splice(index,1)
 
             },
+
             addOrder(){
-                //const axios = require('axios');
-                axios.post('addOrder',{
-                    menu_item:this.menu_item,
-                    quantity:this.quantity
-                })
-                alert("Adding Order");
+
             }
+            // addOrder(){
+            //     //const axios = require('axios');
+            //     axios.post('addOrder',{
+            //         menu_item:this.menu_item,
+            //         quantity:this.quantity
+            //     })
+            //     alert("Adding Order");
+            // }
         }
     })
 </script>
