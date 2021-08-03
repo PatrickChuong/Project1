@@ -15,6 +15,6 @@ class PracticeController extends Controller
 
 
 
-        dd($request->item);
+        dd($request->order);
     }
 }

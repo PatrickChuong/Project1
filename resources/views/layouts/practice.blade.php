@@ -16,13 +16,13 @@
                 @click="deleteForm(index)">
                 X
             </span>
-            <form action="{{ route('addOrder')}}" method="post" id="addOrder">
+            <form action="{{ route('addOrder')}}" method="post" id="addOrder" name="order[]">
             @csrf
             <h4 class="card-title">Add Order (index: @{{index}} )</h4>
 
             <div class="order-form">
                 <input type="text" class="form-control mb-2" placeholder="Menu Item"
-                v-model="order.menu_item" name="item[]"></input>
+                v-model="order.menu_item" name="menu_item[]"></input>
                 <input type="text" class="form-control mb-2" placeholder="Quantity"
                 v-model="order.quantity" name="quantity[]"></input>
             </div>

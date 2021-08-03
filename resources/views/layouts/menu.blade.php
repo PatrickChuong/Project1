@@ -179,6 +179,16 @@ th, td {
 
         </div>
         <div id="content_3" class="inv">
+            <table>
+                <tr>
+                    <th colspan='2'>Hot and Spicy</th>
+                </tr>
+                <tr>
+                    <td>Kun Bao Beef</td>
+                    <td></td>
+                </tr>
+
+            </table>
 
         </div>
 

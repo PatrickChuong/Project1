@@ -48,7 +48,7 @@ th, td{
                 @endforeach
         </tbody>
     </table>
-    <form action"{{ route('deleteOrder')}}" method="post">
+    <form action="{{ route('deleteOrder')}}" method="post">
         @csrf
         <select name="delete">
             <input type="number" name="delete" id="delete" placeholder="Which order ID do you want to delete?"</input>
