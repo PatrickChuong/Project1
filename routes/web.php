@@ -11,8 +11,13 @@ use App\Http\Controllers\TotalController;
 use App\Http\Controllers\PracticeController;
 
 
+// Route::get('/menu', function () {
+//     return view('layouts.menu');
+// });
+
 Route::get('/menu', function () {
-    return view('layouts.menu');
+    $menu = App\Models\dinner_menu::orderBy('id','ASC')->get();
+    return View::make('layouts.menu', compact('menu'));
 });
 
 Route::get('/contact', function () {

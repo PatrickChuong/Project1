@@ -22,7 +22,11 @@ th, td {
   padding: 5px; 
 }
 
-    </style>
+div.div1{
+    padding: 21px;
+}
+</style>
+<div class="div1">
     <body>
         <select id="target">
             <option value="">Menu Selection</option>
@@ -30,7 +34,7 @@ th, td {
             <option value="content_2">Lunch Combinations</option>
             <option value="content_3">Dinner Menu</option>
             <option value="content_4">Favorites</option>
-        <select>
+        </select>
 
         <div id="content_1" class="inv">
             <table style="width=100%">
@@ -179,16 +183,48 @@ th, td {
 
         </div>
         <div id="content_3" class="inv">
-            <table>
-                <tr>
-                    <th colspan='2'>Hot and Spicy</th>
-                </tr>
-                <tr>
-                    <td>Kun Bao Beef</td>
-                    <td></td>
-                </tr>
+            <select id="target">
+                <option value="">Category Selection</option>
+                <option value="content_1d">Pork</option>
+                <option value="content_2d">Poultry</option>
+                <option value="content_3d">Beef</option>
+                <option value="content_4d">Master Chef's Selection</option>
+                <option value="content_5d">Seafood</option>
+            </select>
 
-            </table>
+            <div id="content_1d" class="inv">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item Name</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                <tbody>
+                    @foreach($menu as $menu)
+                        <tr>
+                            <td>{{$menu->item_Name}}</td>
+                            <td>{{$menu->desc}}</td>
+                            <td>{{$menu->price}}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+                </table>
+            </div>
+
+            <div id="content_2d" class="inv">
+                <p>Testing</p>
+            </div>
+            <div id="content_3d" class="inv">
+                <p>Testing</p>
+            </div>
+            <div id="content_4d" class="inv">
+                
+            </div>
+            <div id="content_5d" class="inv">
+                
+            </div>
 
         </div>
 
@@ -212,3 +248,4 @@ th, td {
             });
         </script>
     </body>
+</div>
