@@ -16,8 +16,13 @@ use App\Http\Controllers\PracticeController;
 // });
 
 Route::get('/menu', function () {
-    $menu = App\Models\dinner_menu::orderBy('id','ASC')->get();
-    return View::make('layouts.menu', compact('menu'));
+    $menu = App\Models\dinner_menu::orderBy('id','ASC')->where('category','HnS')->get();
+    $menu2 = App\Models\dinner_menu::orderBy('id','ASC')->where('category','S')->get();
+    $menu3= App\Models\dinner_menu::orderBy('id','ASC')->where('category','B')->get();
+    $menu4 = App\Models\dinner_menu::orderBy('id','ASC')->where('category','PK')->get();
+    $menu5 = App\Models\dinner_menu::orderBy('id','ASC')->where('category','MCS')->get();
+    $menu6 = App\Models\dinner_menu::orderBy('id','ASC')->where('category','PO')->get();
+    return View::make('layouts.menu', compact('menu','menu2','menu3','menu4','menu5','menu6'));
 });
 
 Route::get('/contact', function () {

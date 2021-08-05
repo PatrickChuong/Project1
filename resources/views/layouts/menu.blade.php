@@ -32,8 +32,13 @@ div.div1{
             <option value="">Menu Selection</option>
             <option value="content_1">Daily Specials</option>
             <option value="content_2">Lunch Combinations</option>
-            <option value="content_3">Dinner Menu</option>
-            <option value="content_4">Favorites</option>
+            <option value="content_3">Dinner Menu - Hot and Spicy</option>
+            <option value="content_4">Dinner Menu - Seafood</option>
+            <option value="content_5">Dinner Menu - Beef</option>
+            <option value="content_6">Dinner Menu - Pork</option>
+            <option value="content_7">Dinner Menu - Master Chef's Selection</option>
+            <option value="content_8">Dinner Menu - Poultry</option>
+            <option value="content_9">Favorites</option>
         </select>
 
         <div id="content_1" class="inv">
@@ -182,25 +187,16 @@ div.div1{
             </table>
 
         </div>
-        <div id="content_3" class="inv">
-            <select id="target">
-                <option value="">Category Selection</option>
-                <option value="content_1d">Pork</option>
-                <option value="content_2d">Poultry</option>
-                <option value="content_3d">Beef</option>
-                <option value="content_4d">Master Chef's Selection</option>
-                <option value="content_5d">Seafood</option>
-            </select>
 
-            <div id="content_1d" class="inv">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Item Name</th>
-                            <th>Description</th>
-                            <th>Price</th>
-                        </tr>
-                    </thead>
+        <div id="content_3" class="inv">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
                 <tbody>
                     @foreach($menu as $menu)
                         <tr>
@@ -210,27 +206,119 @@ div.div1{
                         </tr>
                     @endforeach
                 </tbody>
-                </table>
-            </div>
-
-            <div id="content_2d" class="inv">
-                <p>Testing</p>
-            </div>
-            <div id="content_3d" class="inv">
-                <p>Testing</p>
-            </div>
-            <div id="content_4d" class="inv">
-                
-            </div>
-            <div id="content_5d" class="inv">
-                
-            </div>
-
+            </table>
         </div>
 
         <div id="content_4" class="inv">
-
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($menu2 as $menu2)
+                        <tr>
+                            <td>{{$menu2->item_Name}}</td>
+                            <td>{{$menu2->desc}}</td>
+                            <td>{{$menu2->price}}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
+        
+        <div id="content_5" class="inv">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($menu3 as $menu3)
+                        <tr>
+                            <td>{{$menu3->item_Name}}</td>
+                            <td>{{$menu3->desc}}</td>
+                            <td>{{$menu3->price}}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+
+        <div id="content_6" class="inv">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($menu4 as $menu4)
+                        <tr>
+                            <td>{{$menu4->item_Name}}</td>
+                            <td>{{$menu4->desc}}</td>
+                            <td>{{$menu4->price}}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+
+        <div id="content_7" class="inv">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($menu5 as $menu5)
+                        <tr>
+                            <td>{{$menu5->item_Name}}</td>
+                            <td>{{$menu5->desc}}</td>
+                            <td>{{$menu5->price}}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+
+        <div id="content_8" class="inv">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($menu6 as $menu6)
+                        <tr>
+                            <td>{{$menu6->item_Name}}</td>
+                            <td>{{$menu6->desc}}</td>
+                            <td>{{$menu6->price}}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+
+        <div id="content_9" class="inv">
+            
+        </div>
+
+        
         
         <script>
             document
