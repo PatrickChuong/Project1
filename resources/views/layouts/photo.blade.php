@@ -9,12 +9,20 @@
 </head>
 @include ('layouts.header')
 
+<style>
+img
+{
+  width: 20%;
+  height: 20%;
+}
+.hidden
+(
+  display:none;
+)
+</style>
 
-<img src={{ asset('storage/app/public/EggRoll.jpg') }}/>
-<img src="{{ URL::to('/Restaurant/EggRoll.jpg') }}">
 
-
-
+<img src= "{{asset('storage/EggRoll.jpg') }}" class="hidden">
 
 </html>
 
