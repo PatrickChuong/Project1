@@ -21,8 +21,23 @@ img
 )
 </style>
 
+</style>
 
-<img src= "{{asset('storage/EggRoll.jpg') }}" class="hidden">
+<button onclick="function1()">Click</button>
+<div id="div1">
+  <img src= "{{asset('storage/EggRoll.jpg') }}" class="inv">
+</div>
+
+<script>
+function function1() {
+  var x = document.getElementById("div1");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
 
 </html>
 
