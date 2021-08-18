@@ -26,20 +26,29 @@ img
   font-weight:bold;
 }
 
+#div2, #div3, #div4{
+  font-weight:bold;
+  padding: 5px;
+
+}
+button
+{
+  padding: 5px;
+}
 
 
 </style>
 
-<button onclick="function1()">Lunch Combination</button>
-<button onclick="function2()">Appetizers</button>
-<button onclick="function3()">Dinner Entrees</button>
-<button onclick="function4()">Others</button>
+<button class="bg-blue-500 text-white px-3 py-2 rounded font-medium" onclick="function1()">Lunch Combination</button>
+<button class="bg-blue-500 text-white px-3 py-2 rounded font-medium" onclick="function2()">Appetizers</button>
+<button class="bg-blue-500 text-white px-3 py-2 rounded font-medium" onclick="function3()">Dinner Entrees</button>
+<button class="bg-blue-500 text-white px-3 py-2 rounded font-medium" onclick="function4()">Others</button>
 <div class="row">
     <div id="div1" class="column">
       1. Lemon Chicken<img src= "{{asset('storage/LemonChicken.jpg') }}" class="inv">
       3. War Su Gai<img src= "{{asset('storage/WarSuGai.jpg') }}" class="inv">
       5. Hot Braised Chicken Wings<img src= "{{asset('storage/HotBraisedChickenWings.jpg') }}" class="inv">
-      7 Chicken Sub Gum Chow Mein<img src= "{{asset('storage/ChickenSubGumChowMein.jpg') }}" class="inv">
+      7. Chicken Sub Gum Chow Mein<img src= "{{asset('storage/ChickenSubGumChowMein.jpg') }}" class="inv">
       11. Beef With Broccoli<img src= "{{asset('storage/BeefWithBroccoli.jpg') }}" class="inv">  
       19. Chicken Curry<img src= "{{asset('storage/ChickenCurry.jpg') }}" class="inv">
       21. General Tso's Chicken<img src= "{{asset('storage/GeneralTsosChicken.jpg') }}" class="inv">
@@ -60,7 +69,7 @@ img
 <div id="div2">
 Beef Teriyaki<img src= "{{asset('storage/BeefTeriyaki.jpg') }}" class="inv">
 Egg Roll<img src= "{{asset('storage/EggRoll.jpg') }}" class="inv">
-Oyster Chicken Wings<img src= "{{asset('storage/OysterChicken2.jpg') }}" class="inv">\
+Oyster Chicken Wings<img src= "{{asset('storage/OysterChicken2.jpg') }}" class="inv">
 Spring Roll<img src= "{{asset('storage/SpringRoll.jpg') }}" class="inv">
 </div>
 
