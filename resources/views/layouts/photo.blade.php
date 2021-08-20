@@ -22,22 +22,34 @@ img
 }
 
 .row {
+  position:relative;
+  top:50px;
   display: flex;
   font-weight:bold;
 }
 
 #div2, #div3, #div4{
+  position:relative;
+  top:50px;
   font-weight:bold;
   padding: 5px;
 
 }
+
+p{
+  position:relative;
+  top:50px;
+}
 button
 {
+  position:relative;
+  top:50px;
   padding: 5px;
 }
 
 
 </style>
+<p>Please Select a Button to show photos</p>
 
 <button class="bg-blue-500 text-white px-3 py-2 rounded font-medium" onclick="function1()">Lunch Combination</button>
 <button class="bg-blue-500 text-white px-3 py-2 rounded font-medium" onclick="function2()">Appetizers</button>

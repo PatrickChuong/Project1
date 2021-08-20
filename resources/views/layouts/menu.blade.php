@@ -23,7 +23,7 @@ th, td {
 }
 
 div.div1{
-    padding: 21px;
+    padding: 46px;
 }
 </style>
 <div class="div1">
