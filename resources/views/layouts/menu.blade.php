@@ -21,6 +21,9 @@ table, th, td {
 th, td {
   padding: 5px; 
 }
+table{
+    padding:5px;
+}
 
 div.div1{
     padding: 46px;
@@ -315,7 +318,125 @@ div.div1{
         </div>
 
         <div id="content_9" class="inv">
-            
+            <table style="width=100%">
+                <tr>
+                    <th colspan="3">Fried Rice</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Small</td>
+                    <td>Large</td>
+                </tr>
+                <tr>
+                    <td>Pork or Chicken</td>
+                    <td>$5.25</td>
+                    <td>$7.95</td>
+                </tr>
+                <tr>
+                    <td>Shrimp or Beef</td>
+                    <td>$5.65</td>
+                    <td>$8.55</td>
+                </tr>
+                <tr>
+                    <td>Chung King Palace</td>
+                    <td>$5.65</td>
+                    <td>$8.55</td>
+                </tr>
+            </table>
+
+            <table style="width=100%">
+                <tr>
+                    <th colspan="2">Soups</th>
+                </tr>
+                <tr>
+                    <td>Wonton</td>
+                    <td>$2.95</td>
+                </tr>
+                <tr>
+                    <td>Hot & Sour</td>
+                    <td>$3.29</td>
+                </tr>
+                <tr>
+                    <td>Chinese Vegatables</td>
+                    <td>$2.95</td>
+                </tr>
+                <tr>
+                    <td>Chicken Rice</td>
+                    <td>$2.95</td>
+                </tr>
+                <tr>
+                    <td>Egg Drop</td>
+                    <td>$2.95</td>
+                </tr>
+                <tr>
+                    <td>San Shen</td>
+                    <td>$3.29</td>
+                </tr>
+                <tr>
+                    <td>Chicken Noodle</td>
+                    <td>$2.95</td>
+                </tr>
+            </table>
+            <table style="width=100%">
+                <tr>
+                    <th colspan="2">Beverages</th>
+                </tr>
+                <tr>
+                    <td>Hot Tea</td>
+                    <td>$2.10</td>
+                </tr>
+                <tr>
+                    <td>Soft Drink</td>
+                    <td>$2.10</td>
+                </tr>
+                <tr>
+                    <td>Milk</td>
+                    <td>$2.10</td>
+                </tr>
+                <tr>
+                    <td>Ice Tea</td>
+                    <td>$2.10</td>
+                </tr>
+            </table>
+            <table style="width=100%">
+                <tr>
+                    <th colspan="2">Appetizers</th>
+                </tr>
+                <tr>
+                    <td>Steamed Dumplings or Pot Stickers (8)</td>
+                    <td>$5.55</td>
+                </tr>
+                <tr>
+                    <td>Barbecued Pork</td>
+                    <td>$6.25</td>
+                </tr>
+                <tr>
+                    <td>Crab Rangoon</td>
+                    <td>$4.55</td>
+                </tr>
+                <tr>
+                    <td>Chicken Wings</td>
+                    <td>$5.75</td>
+                </tr>
+                <tr>
+                    <td>Beef Teriyaki</td>
+                    <td>$6.75</td>
+                </tr>
+                <tr>
+                    <td>Fried Wonton</td>
+                    <td>$4.55</td>
+                </tr>
+                <tr>
+                    <td>Egg Roll</td>
+                    <td>$1.30</td>
+                </tr>
+                <tr>
+                    <td>Pupu Platter*</td>
+                    <td>$6.95</td>
+                </tr>
+            </table>
+            <p>*Per Person, Minimum 2 People</p>
+            <p>*Barbecued Pork,Fried Wonton Chicken Wings, Sweet and Sour Chicken, Beef Teriyaki and Egg Roll</p>
         </div>
 
         
