@@ -28,6 +28,15 @@ table{
 div.div1{
     padding: 46px;
 }
+.column {
+  padding: 5px;
+}
+
+.row {
+  position:relative;
+  display: flex;
+  font-weight:bold;
+}
 </style>
 <div class="div1">
     <body>
@@ -318,6 +327,8 @@ div.div1{
         </div>
 
         <div id="content_9" class="inv">
+        <div class="row">
+            <div class="column">
             <table style="width=100%">
                 <tr>
                     <th colspan="3">Fried Rice</th>
@@ -343,7 +354,9 @@ div.div1{
                     <td>$8.55</td>
                 </tr>
             </table>
+            </div>
 
+            <div class="column">
             <table style="width=100%">
                 <tr>
                     <th colspan="2">Soups</th>
@@ -377,6 +390,10 @@ div.div1{
                     <td>$2.95</td>
                 </tr>
             </table>
+            </div>
+
+
+            <div class="column">
             <table style="width=100%">
                 <tr>
                     <th colspan="2">Beverages</th>
@@ -398,6 +415,9 @@ div.div1{
                     <td>$2.10</td>
                 </tr>
             </table>
+            </div>
+
+            <div class="column">
             <table style="width=100%">
                 <tr>
                     <th colspan="2">Appetizers</th>
@@ -437,6 +457,8 @@ div.div1{
             </table>
             <p>*Per Person, Minimum 2 People</p>
             <p>*Barbecued Pork,Fried Wonton Chicken Wings, Sweet and Sour Chicken, Beef Teriyaki and Egg Roll</p>
+            <div>
+        </div>
         </div>
 
         
