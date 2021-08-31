@@ -59,7 +59,8 @@ Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
 Route::get('/placeOrder', function () {
     $menu = DB::table('menu_items')->orderBy('id','ASC')->get();
-    return View::make('layouts.placeOrder ', compact('menu'));
+    $menu1 = App\Models\dinner_menu::orderBy('id','ASC')->where('category','HnS')->get();
+    return View::make('layouts.placeOrder ', compact('menu','menu1'));
 });
 
 Route::post('/placeOrder', [OrderController::class, 'store'])->name('placeOrder');

@@ -31,6 +31,9 @@ div.div1{
                     @foreach($menu as $menu)
                     <option value="{{$menu->id}}">{{$menu->item_Name}} {{$menu->price}}</option>
                     @endforeach
+                    @foreach($menu1 as $menu1)
+                    <option value="{{$menu1->id}}">{{$menu1->item_Name}} {{$menu1->price}}</option>
+                    @endforeach
                     <select name="quantity">
                         <input type="number" name="quantity" id="quantity" placeholder="How many do you want (Numeric Value)?" v-model="order.quantity"></input>
                     </select>

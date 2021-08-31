@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\orderDetail;
+use App\Models\dinner_menu;
 use App\Http\Controllers;
 
 class OrderController extends Controller
@@ -11,7 +12,8 @@ class OrderController extends Controller
     public function show(Request $request)
     {
         $menu = DB::table('menu_items')->orderBy('id','ASC')->get();
-        return view('layouts.placeOrder ', ['menu' => $menu]);
+        $menu1 = App\Models\dinner_menu::orderBy('id','ASC')->where('category','HnS')->get();
+        return view('layouts.placeOrder ', ['menu' => $menu, 'menu1' => $menu1]);
     }
 
     public function index()
