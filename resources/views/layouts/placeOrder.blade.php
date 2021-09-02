@@ -32,22 +32,22 @@ div.div1{
                     <option value="{{$menu->id}}">{{$menu->item_Name}} {{$menu->price}}</option>
                     @endforeach
                     @foreach($menu1 as $menu1)
-                    <option value="{{$menu1->id}}">{{$menu1->item_Name}} {{$menu1->price}}</option>
+                    <option value="{{$menu1->id_alt}}">{{$menu1->item_Name}} {{$menu1->price}}</option>
                     @endforeach
                     @foreach($menu2 as $menu2)
-                    <option value="{{$menu2->id}}">{{$menu2->item_Name}} {{$menu2->price}}</option>
+                    <option value="{{$menu2->id_alt}}">{{$menu2->item_Name}} {{$menu2->price}}</option>
                     @endforeach
                     @foreach($menu3 as $menu3)
-                    <option value="{{$menu3->id}}">{{$menu3->item_Name}} {{$menu3->price}}</option>
+                    <option value="{{$menu3->id_alt}}">{{$menu3->item_Name}} {{$menu3->price}}</option>
                     @endforeach
                     @foreach($menu4 as $menu4)
-                    <option value="{{$menu4->id}}">{{$menu4->item_Name}} {{$menu4->price}}</option>
+                    <option value="{{$menu4->id_alt}}">{{$menu4->item_Name}} {{$menu4->price}}</option>
                     @endforeach
                     @foreach($menu5 as $menu5)
-                    <option value="{{$menu5->id}}">{{$menu5->item_Name}} {{$menu5->price}}</option>
+                    <option value="{{$menu5->id_alt}}">{{$menu5->item_Name}} {{$menu5->price}}</option>
                     @endforeach
                     @foreach($menu6 as $menu6)
-                    <option value="{{$menu6->id}}">{{$menu6->item_Name}} {{$menu6->price}}</option>
+                    <option value="{{$menu6->id_alt}}">{{$menu6->item_Name}} {{$menu6->price}}</option>
                     @endforeach
                     <select name="quantity">
                         <input type="number" name="quantity" id="quantity" placeholder="How many do you want (Numeric Value)?" v-model="order.quantity"></input>

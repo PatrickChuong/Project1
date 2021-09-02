@@ -24,6 +24,7 @@ class TotalController extends Controller
                 //->groupBy('order_details.order_id')
 
                 ->join('menu_items', 'order_details.menu_item', '=','menu_items.id')
+                //->join('dinner_menus', 'order_details.menu_item', '=','dinner_menus.id_alt')
                 ->select(DB::raw('order_details.quantity * menu_items.price as total'))
                 //->groupBy('order_details.order_id')
                 ->get();
