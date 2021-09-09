@@ -85,4 +85,8 @@ Route::post('/totalOrder', [TotalController::class, 'total']);
 // Route::post('addOrder','PracticeController@addOrder'):
 Route::post('/practice', [PracticeController::class, 'addOrder'])->name('addOrder');
 
+//Route::post('formSubmit','PostPracController');
 
+Route::post('posts', 'PostPracController@store');
+Route::get('posts', 'PostPracController@get');
+Route::delete('posts/{id}', 'PostPracController@delete');
