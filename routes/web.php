@@ -87,6 +87,4 @@ Route::post('/practice', [PracticeController::class, 'addOrder'])->name('addOrde
 
 //Route::post('formSubmit','PostPracController');
 
-Route::post('posts', 'PostPracController@store');
-Route::get('posts', 'PostPracController@get');
-Route::delete('posts/{id}', 'PostPracController@delete');
+Route::get('/','PostController@index');

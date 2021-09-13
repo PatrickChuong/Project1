@@ -14,22 +14,29 @@ class PostPracController extends Controller
 
 {
 
-    /**
-
-     * success response method.
-
-     *
-
-     * @return \Illuminate\Http\Response
-
-     */
-
-    public function formSubmit(Request $request)
-
+    public function index()
     {
-
-    	return response()->json([$request->all()]);
-
+        return view('posts');
+    }
+    
+    public function get(Request $request)
+    {
+        $posts = Post::orderBy('created_at', 'desc')->get();
+        return response()->json($posts);
+    }
+    
+    public function store(Request $request)
+    {
+        $post = Post::create($request->all());
+    
+        return response()->json($post);
+    }
+    
+    public function delete($id)
+    {
+        Post::destroy($id);
+    
+        return response()->json("ok");
     }
 
 }
