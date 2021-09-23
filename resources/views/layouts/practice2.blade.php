@@ -2,59 +2,111 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+<header>
+<script src="{{ asset('js/app.js') }}" defer></script>
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+</header>
 
 <div class="container">
     <button class="btn btn-success mt-5 mb-5"
-    onclick="function1()">
-    Start Order
+    @click="addNewForm">
+    New order
+
     </button>
-    <div id="div1">
-        <form action="{{ route('placeOrder')}}" method="post" id="placeOrder">Order @{{index}}
+
+    <div class="card mb-3" v-for="(order, index) in orders">
+        <div class="card-body">
+            <span class="float-right"
+                @click="deleteForm(index)">
+                X
+            </span>
+            <form action="{{ route('addOrder')}}" method="post" id="addOrder" name="order[]">
             @csrf
-            <div class="form-group">
-                <select class="form-control mt-5 mb-5" name="menu_item" v-model="order.menu_item">
-                    @foreach($menu as $menu)
-                    <option value="{{$menu->id}}">{{$menu->item_Name}} {{$menu->price}}</option>
-                    @endforeach
-                    @foreach($menu1 as $menu1)
-                    <option value="{{$menu1->id_alt}}">{{$menu1->item_Name}} {{$menu1->price}}</option>
-                    @endforeach
-                    @foreach($menu2 as $menu2)
-                    <option value="{{$menu2->id_alt}}">{{$menu2->item_Name}} {{$menu2->price}}</option>
-                    @endforeach
-                    @foreach($menu3 as $menu3)
-                    <option value="{{$menu3->id_alt}}">{{$menu3->item_Name}} {{$menu3->price}}</option>
-                    @endforeach
-                    @foreach($menu4 as $menu4)
-                    <option value="{{$menu4->id_alt}}">{{$menu4->item_Name}} {{$menu4->price}}</option>
-                    @endforeach
-                    @foreach($menu5 as $menu5)
-                    <option value="{{$menu5->id_alt}}">{{$menu5->item_Name}} {{$menu5->price}}</option>
-                    @endforeach
-                    @foreach($menu6 as $menu6)
-                    <option value="{{$menu6->id_alt}}">{{$menu6->item_Name}} {{$menu6->price}}</option>
-                    @endforeach
-                    <select name="quantity">
-                        <input type="number" name="quantity" id="quantity" placeholder="How many do you want (Numeric Value)?" v-model="order.quantity"></input>
-                    </select>
+            <h4 class="card-title">Add Order (index: @{{index}} )</h4>
 
-                </select>
-                    <!-- <button type="submit" class="bg-blue-500 text-white px-4 py-3 rounded font-medium w-full" onclick="add()" name="count">Place Order</button> -->
-                    <input type="hidden" name="count" id="count" value="0"></input>
-        </form>
+            <div class="order-form">
+                <input type="text" class="form-control mb-2" placeholder="Menu Item"
+                v-model="order.menu_item" name="menu_item[]"></input>
+                <input type="text" class="form-control mb-2" placeholder="Quantity"
+                v-model="order.quantity" name="quantity[]"></input>
+            </div>
+        </div>
     </div>
-
+    <button class="btn btn-success mt-5 mb-5" type="submit" form="addOrder">Add Order
+    <!-- <button class="btn btn-success mt-5 mb-5" type="submit" @click="addOrder">Add Order -->
+</form>
+<div id="abc">
+    <example></example>
 </div>
 
-<script>
-var x = document.getElementById("div1");
-  x.style.display = "none";
 
-function function1() {
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
+
+<!-- <script>
+    export default{
+
+        data(){
+            return{
+                menu_item:'',
+                quantity:''
+            }
+        },
+        mounted(){
+            console.log('Component mounted.')
+        },
+
+        methods:{
+            addOrder(index){
+                axios.post('/placeorder',{
+                    menu_item:this.menu_item,
+                    quantity:this.quantity
+                })
+                .then(function (response){
+                    currentObj.output = response.data;
+                })
+                alert("Adding Order");
+            }
+        }
+    }
+</script> -->
+
+
+
+
+<script>
+    var app = new Vue({
+        el:'.container',
+        data:{
+            orders:[
+                {
+                    menu_item:'',
+                    quantity:''
+                }
+            ]
+        },
+        methods:{
+            addNewForm(){
+                this.orders.push({
+                    menu_item:'',
+                    quantity:''
+                })
+            },
+            deleteForm(index){
+                this.orders.splice(index,1)
+
+            },
+
+            addOrder(){
+
+            }
+            // addOrder(){
+            //     //const axios = require('axios');
+            //     axios.post('addOrder',{
+            //         menu_item:this.menu_item,
+            //         quantity:this.quantity
+            //     })
+            //     alert("Adding Order");
+            // }
+        }
+    })
 </script>

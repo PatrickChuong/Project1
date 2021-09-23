@@ -87,4 +87,4 @@ Route::post('/practice', [PracticeController::class, 'addOrder'])->name('addOrde
 
 //Route::post('formSubmit','PostPracController');
 
-Route::get('/','PostController@index');
+//Route::get('/','PostController@index');
